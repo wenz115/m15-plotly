@@ -1,0 +1,14 @@
+---
+title: "index.Rmd"
+output: html_document
+---
+
+```{r exercise2, echo=FALSE, message=FALSE, }
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+set.seed(100)
+d <- diamonds[sample(nrow(diamonds), 1000), ]
+plot_ly(d, x = ~carat, y = ~price, color = ~carat,
+        size = ~carat, text = ~paste("Clarity: ", clarity))
+d
+```
